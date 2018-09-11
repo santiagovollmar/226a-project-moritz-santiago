@@ -1,0 +1,28 @@
+@startuml
+left to right direction
+
+
+actor :User:
+
+rectangle "Rest API" {
+	actor :AmazonFetcher:
+	actor :WholesaleFetcher:
+	usecase (get bestseller\nranking\non amazon) as Bs
+    usecase (get phone specs) as Sp
+    usecase (get lowest price\non amazon) as Lp
+    usecase (get associated\ndeals on\nwholesale market) as Ws
+    usecase (add amazon data) as Ad
+    usecase (add wholesale data) as Md
+    usecase (get best deals) as Bd
+}
+
+User -left-> Bs
+User -down-> Sp
+User -down-> Lp
+User -right-> Ws
+User -down-> Bd
+
+AmazonFetcher --> Ad
+WholesaleFetcher --> Md
+
+@enduml
