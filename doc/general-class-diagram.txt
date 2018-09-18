@@ -1,0 +1,11 @@
+@startuml
+
+class ExtendedEntity {
+    - id : id
+    + ExtendedEntity()
+    + ExtendedEntity(id : long)
+	+ getId() : long
+	+ setId(id : long) : void
+}
+
+@enduml
