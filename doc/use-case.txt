@@ -7,9 +7,8 @@ actor :User:
 rectangle "Rest API" {
 	actor :AmazonFetcher:
 	actor :WholesaleFetcher:
-	usecase (get bestseller\nranking\non amazon) as Bs
-    usecase (get phone specs) as Sp
-    usecase (get lowest price\non amazon) as Lp
+	usecase (get bestsellers\nfrom amazon) as Bs
+    usecase (get lowest price\nfrom amazon) as Lp
     usecase (get associated\ndeals on\nwholesale market) as Ws
     usecase (add amazon data) as Ad
     usecase (add wholesale data) as Md
@@ -17,12 +16,11 @@ rectangle "Rest API" {
 }
 
 User -left-> Bs
-User -down-> Sp
-User -down-> Lp
-User -right-> Ws
 User -down-> Bd
+User -right-> Ws
+User -down-> Lp
 
-AmazonFetcher --> Ad
-WholesaleFetcher --> Md
+AmazonFetcher -up-> Ad
+WholesaleFetcher -up-> Md
 
 @enduml
