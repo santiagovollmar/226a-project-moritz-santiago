@@ -1,0 +1,2 @@
+This week we started to plan the general architecture of our application and we began writing a class diagram.
+Next time we plan on resuming this.
