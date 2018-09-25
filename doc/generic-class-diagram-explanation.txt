@@ -1,0 +1,1 @@
+This diagram shows all of our generic classes which stay the same when developing the application. The Address-Domain is just an example of how these classes are to be used when creating a new domain.
