@@ -3,7 +3,7 @@ package webContext.exceptionHandling;
 /**
  * This class gives closer information of a validation violation.
  *
- * @author Yves Kaufmann
+ * @author Moritz Lauper
  */
 public class ValidationError {
 	
