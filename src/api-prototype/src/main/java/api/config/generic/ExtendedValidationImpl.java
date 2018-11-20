@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.Errors;
 
-import ch.nyp.noa.config.PropertyReader;
+import api.config.PropertyReader;
 
 @Component
 public abstract class ExtendedValidationImpl implements ExtendedValidation {
