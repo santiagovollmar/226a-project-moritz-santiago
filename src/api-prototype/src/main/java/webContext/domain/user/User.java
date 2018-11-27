@@ -1,3 +1,5 @@
+package webContext.domain.user;
+
 import java.sql.Date;
 
 import api.config.generic.ExtendedEntity;
