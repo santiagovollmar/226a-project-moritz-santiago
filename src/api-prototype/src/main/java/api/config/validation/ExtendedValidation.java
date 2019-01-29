@@ -15,7 +15,7 @@ import ch.nyp.noa.config.PropertyReader;
  */
 public abstract class ExtendedValidation {
 	
-	private static final Pattern NAME_REGEX = Pattern.compile("^[a-zA-Z-\\x7F-\\xFF]$");
+	private static final Pattern NAME_REGEX = Pattern.compile("^[a-zA-Z-_\\x7F-\\xFF]*$");
 	
 	protected PropertyReader messageReader;
 	

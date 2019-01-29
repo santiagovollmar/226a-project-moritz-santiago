@@ -1,4 +1,4 @@
-package ch.nyp.noa.config.validation;
+package ch.nyp.noa.config.validation.util;
 
 public class ValidationNotFoundException extends Exception {
 	
