@@ -1,4 +1,4 @@
-package ch.nyp.noa.config.validation;
+package api.config.validation;
 
 import java.io.IOException;
 import java.util.regex.Matcher;
@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 
 import org.springframework.validation.Errors;
 
-import ch.nyp.noa.config.PropertyReader;
+import api.config.PropertyReader;
 
 /**
  * This class covers the common methods for the validation.
@@ -15,7 +15,7 @@ import ch.nyp.noa.config.PropertyReader;
  */
 public abstract class ExtendedValidation {
 	
-	private static final Pattern NAME_REGEX = Pattern.compile("^[a-zA-Z-\\x7F-\\xFF]$");
+	private static final Pattern NAME_REGEX = Pattern.compile("^[a-zA-Z-_\\x7F-\\xFF]*$");
 	
 	protected PropertyReader messageReader;
 	

@@ -1,4 +1,4 @@
-package webContext.exceptionHandling;
+package api.webContext.exceptionHandling;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package ch.nyp.noa.config.validation;
+package api.config.validation;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,6 +16,9 @@ import org.springframework.core.type.classreading.MetadataReaderFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.util.ClassUtils;
 import org.springframework.util.SystemPropertyUtils;
+
+import api.config.validation.annotation.Validation;
+import api.config.validation.annotation.Validations;
 
 @Component
 public class ValidationClassesRegistrar implements ApplicationRunner {
@@ -35,13 +38,10 @@ public class ValidationClassesRegistrar implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		/*
-		 * register @Mappables
-		 */
 		// find classes annotated with @Validation
 		List<Class<?>> validationClasses = findClasses(BASE_PACKAGE, metadataReader -> {
 			try {
-				return metadataReader.getAnnotationMetadata().hasAnnotation(Validation.class.getName());
+				return metadataReader.getAnnotationMetadata().hasAnnotation(Validations.class.getName());
 			} catch (Throwable e) {}
 			
 			return false;
@@ -49,10 +49,11 @@ public class ValidationClassesRegistrar implements ApplicationRunner {
 		
 		// register found classes
 		for (Class<?> validationClass : validationClasses) {
-			Validation annotation = validationClass.getAnnotation(Validation.class);
-			if (annotation != null) {
-				Class<?> entityClass = annotation.value();
-				validationRegistry.register(entityClass, validationClass);
+			Validations validations = validationClass.getAnnotation(Validations.class);
+			if (validations != null) {
+				for (Validation validation : validations.value()) {
+					validationRegistry.register(validationClass, validation);
+				}
 			}
 		}
 	}
@@ -87,7 +88,7 @@ public class ValidationClassesRegistrar implements ApplicationRunner {
 						candidates.add(Class.forName(metadataReader.getClassMetadata().getClassName()));
 					}
 				}
-			} catch (Exception ignore) {} // just skip the resource
+			} catch (Exception ignore) {} // meh, just skip the resource
 		}
 		return candidates;
 	}

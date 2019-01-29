@@ -1,4 +1,4 @@
-package webContext.exceptionHandling;
+package api.webContext.exceptionHandling;
 
 /**
  * This class gives closer information of a validation violation.
