@@ -18,6 +18,8 @@ import org.springframework.security.web.util.matcher.RequestMatcher;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import api.config.PropertyReader;
+import api.webContext.domain.user.User;
+import api.webContext.domain.user.UserDetailsImpl;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 

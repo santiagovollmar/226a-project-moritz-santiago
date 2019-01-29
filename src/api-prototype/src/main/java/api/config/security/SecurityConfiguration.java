@@ -15,6 +15,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import api.config.PropertyReader;
+import api.webContext.domain.user.UserService;
 
 /**
  * This class is the main security context
