@@ -8,6 +8,9 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import api.webContext.domain.authority.Authority;
+import api.webContext.domain.roles.Role;
+
 /**
  * This class implements an additional layer of logic to the traditional entity
  * user.

@@ -2,6 +2,7 @@ package api.webContext.domain.user;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +17,7 @@ import org.hibernate.annotations.Type;
 
 import api.config.generic.ExtendedEntity;
 import api.webContext.domain.address.Address;
+import api.webContext.domain.roles.Role;
 
 /**
  * This class is the Entity User. A User can hold multiple roles with its own
@@ -179,7 +181,7 @@ public class User extends ExtendedEntity {
 		this.credentialsExpirationDate = credentialsExpirationDate;
 	}
 
-	public Boolean getLocked() {
+	public Boolean isLocked() {
 		return locked;
 	}
 
@@ -187,7 +189,7 @@ public class User extends ExtendedEntity {
 		this.locked = locked;
 	}
 
-	public Boolean getEnabled() {
+	public Boolean isEnabled() {
 		return enabled;
 	}
 
